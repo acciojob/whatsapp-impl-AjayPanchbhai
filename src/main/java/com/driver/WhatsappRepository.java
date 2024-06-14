@@ -30,7 +30,7 @@ public class WhatsappRepository {
         this.adminMap = new HashMap<Group, User>();
         this.userMobile = new HashSet<>();
         this.messages = new HashMap<>();
-        this.customGroupCount = 0;
+        this.customGroupCount = 1;
         this.messageId = 1;
     }
 
@@ -56,7 +56,7 @@ public class WhatsappRepository {
 
 //            groupPersonalChatMap.put(group, users);
         } else {
-            String groupName = "Group " + (groupUserMap.size());
+            String groupName = "Group " + customGroupCount++;
             User admin = users.get(0);
 
             group.setNumberOfParticipants(users.size());
@@ -64,6 +64,7 @@ public class WhatsappRepository {
 
             adminMap.put(group, admin);
         }
+
         groupMessageMap.put(group, new ArrayList<>());
         groupUserMap.put(group, users);
 
