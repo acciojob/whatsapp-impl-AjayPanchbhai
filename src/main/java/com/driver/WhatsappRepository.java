@@ -44,7 +44,7 @@ public class WhatsappRepository {
     }
 
     public Group createGroup(List<User> users) {
-        // The list contains at least 2 users where the first user is the admin.
+        //// The list contains at least 2 users where the first user is the admin.
         // If there are only 2 users, the group is a personal chat and the group name should be kept as the name of the second user(other than admin)
         // If there are 2+ users, the name of group should be "Group #count". For example, the name of first group would be "Group 1", second would be "Group 2" and so on.
         // Note that a personal chat is not considered a group and the count is not updated for personal chats.
@@ -143,10 +143,8 @@ public class WhatsappRepository {
         //A user belongs to exactly one group
         //If user is not found in any group, throw "User not found" exception
         //If user is found in a group and it is the admin, throw "Cannot remove admin" exception
-        //If user is not the admin, remove the user from the group, remove all its messages from all the databases,
-        //          -----------and update relevant attributes accordingly.
-        //If user is removed successfully, return (the updated number of users in the group + the updated number of messages
-        //          -----------in group + the updated number of overall messages)
+        //If user is not the admin, remove the user from the group, remove all its messages from all the databases, and update relevant attributes accordingly.
+        //If user is removed successfully, return (the updated number of users in the group + the updated number of messages in group + the updated number of overall messages)
         if(!users.containsKey(user.getMobile()))
             throw new Exception("User not found");
 
@@ -186,10 +184,9 @@ public class WhatsappRepository {
 
 
     public String findMessage(Date start, Date end, int K) throws Exception {
-        // This is a bonus problem and does not contains any marks
+        //This is a bonus problem and does not contains any marks
         // Find the Kth latest message between start and end (excluding start and end)
         // If the number of messages between given time is less than K, throw "K is greater than the number of messages" exception
-
         ArrayList<Message> filteredMessages = new ArrayList<>();
 
         for (Message message : messages.values()) {
