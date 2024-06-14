@@ -56,7 +56,7 @@ public class WhatsappRepository {
 
 //            groupPersonalChatMap.put(group, users);
         } else {
-            String groupName = "Group " + (groupUserMap.size() + 1);
+            String groupName = "Group " + (groupUserMap.size());
             User admin = users.get(0);
 
             group.setNumberOfParticipants(users.size());
