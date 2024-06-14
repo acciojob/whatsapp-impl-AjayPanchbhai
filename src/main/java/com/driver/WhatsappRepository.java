@@ -54,7 +54,7 @@ public class WhatsappRepository {
             group.setNumberOfParticipants(2);
             group.setName(users.get(1).getName());
 
-            groupPersonalChatMap.put(group, users);
+//            groupPersonalChatMap.put(group, users);
         } else {
             String groupName = "group" + (groupUserMap.size() + 1);
             User admin = users.get(0);
@@ -63,9 +63,9 @@ public class WhatsappRepository {
             group.setName(groupName);
 
             adminMap.put(group, admin);
-            groupUserMap.put(group, users);
-            groupMessageMap.put(group, new ArrayList<>());
         }
+        groupMessageMap.put(group, new ArrayList<>());
+        groupUserMap.put(group, users);
 
         return group;
     }
