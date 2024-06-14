@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 public class WhatsappRepository {
 
     //Assume that each user belongs to at most one group
-    //You can use the below-mentioned hashmaps or delete these and create your own.
+    //You can use the below mentioned hashmaps or delete these and create your own.
     private final HashMap<String, User> users;
     private final HashMap<Group, List<User>> groupUserMap;
     private final HashMap<Group, List<User>> groupPersonalChatMap;
@@ -139,10 +139,10 @@ public class WhatsappRepository {
     }
 
     public int removeUser(User user) throws Exception{
-        //This is a bonus problem and does not contain any marks
+        //This is a bonus problem and does not contains any marks
         //A user belongs to exactly one group
         //If user is not found in any group, throw "User not found" exception
-        //If user is found in a group, and it is the admin, throw "Cannot remove admin" exception
+        //If user is found in a group and it is the admin, throw "Cannot remove admin" exception
         //If user is not the admin, remove the user from the group, remove all its messages from all the databases,
         //          -----------and update relevant attributes accordingly.
         //If user is removed successfully, return (the updated number of users in the group + the updated number of messages
@@ -186,7 +186,7 @@ public class WhatsappRepository {
 
 
     public String findMessage(Date start, Date end, int K) throws Exception {
-        // This is a bonus problem and does not contain any marks
+        // This is a bonus problem and does not contains any marks
         // Find the Kth latest message between start and end (excluding start and end)
         // If the number of messages between given time is less than K, throw "K is greater than the number of messages" exception
 
