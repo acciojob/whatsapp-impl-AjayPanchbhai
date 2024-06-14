@@ -44,7 +44,7 @@ public class WhatsappService {
 
     public int removeUser(User user) throws Exception{
         //If user is not found in any group, throw "User not found" exception
-        //If user is found in a group and it is the admin, throw "Cannot remove admin" exception
+        //If user is found in a group, and it is the admin, throw "Cannot remove admin" exception
         //If user is not the admin, remove the user from the group, remove all its messages from all the databases, and update relevant attributes accordingly.
 
         return whatsappRepository.removeUser(user);
