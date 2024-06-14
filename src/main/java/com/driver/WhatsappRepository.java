@@ -31,7 +31,7 @@ public class WhatsappRepository {
         this.userMobile = new HashSet<>();
         this.messages = new HashMap<>();
         this.customGroupCount = 0;
-        this.messageId = 0;
+        this.messageId = 1;
     }
 
     public String createUser(String name, String mobile) throws Exception {
@@ -127,7 +127,7 @@ public class WhatsappRepository {
 
         for(User user1 : groupUserMap.get(group)) {
             if(user1.equals(approver)) {
-                if (adminMap.get(group).equals(approver))
+                if (!adminMap.get(group).equals(approver))
                     throw new Exception("Approver does not have rights");
                 adminMap.put(group, user);
 
